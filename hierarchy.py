@@ -1,6 +1,7 @@
 
 from collections import defaultdict
 import json
+import os
 
 def tree():
     return defaultdict(tree)
@@ -38,14 +39,24 @@ def save_hierarchy(hierarchy, file_path):
     with open(file_path, 'w') as file:
         json.dump(regular_dict, file, indent=2)
 
+def convert_to_tree(regular_dict):
+    return defaultdict(tree, {k: convert_to_tree(v) for k, v in regular_dict.items()})
+
 def load_hierarchy(file_path):
     with open(file_path, 'r') as file:
         regular_dict = json.load(file)
-    return defaultdict(tree, convert_to_tree(regular_dict))
+    return convert_to_tree(regular_dict)
+
 
 def main():
     hierarchy = tree()
     hidden_hierarchy = tree()
+
+    file_path = 'hierarchy.json'
+    try:
+        hierarchy = load_hierarchy(file_path)
+    except FileNotFoundError:
+        print("No previous hierarchy found.")
 
     while True:
         print("\nMenu:")
@@ -68,6 +79,7 @@ def main():
             path = input("Enter the path to the hidden element to show (e.g., Programming/Python): ").split('/')
             show_element(hierarchy, path, hidden_hierarchy)
         elif choice == '5':
+            save_hierarchy(hierarchy, file_path)
             print("Exiting program.")
             break
         else:
