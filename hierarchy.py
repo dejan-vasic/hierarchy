@@ -2,6 +2,18 @@ from collections import defaultdict
 import json
 import os
 
+def create_folders(hierarchy, parent_folder='.'):
+    for key, value in hierarchy.items():
+        new_folder = os.path.join(parent_folder, key)
+        os.makedirs(new_folder)
+        #print(key)
+        create_folders(value, new_folder)
+
+def foders_to_hierarchy(parent_folder='.'):
+    for root, dirs, files in os.walk(parent_folder):
+        print(root, dirs, files)
+
+
 def tree():
     return defaultdict(tree)
 
@@ -46,7 +58,6 @@ def load_hierarchy(file_path):
         regular_dict = json.load(file)
     return convert_to_tree(regular_dict)
 
-
 def main():
     hierarchy = tree()
     hidden_hierarchy = tree()
@@ -54,6 +65,10 @@ def main():
     file_path = 'hierarchy.json'
     try:
         hierarchy = load_hierarchy(file_path)
+        # Sections for test purpose
+        #create_folders(hierarchy, 'hierarchy')
+        foders_to_hierarchy('hierarchy')
+        # End
     except FileNotFoundError:
         print("No previous hierarchy found.")
 

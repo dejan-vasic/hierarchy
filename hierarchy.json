@@ -25,14 +25,33 @@
   "Engleski": {},
   "Portugalski": {},
   "Sviranje gitare": {},
-  "Crtanje": {},
+  "Crtanje": {
+    "Osnovni oblici": {
+      "Pravilni Oblici": {},
+      "Linije": {},
+      "3D Oblici": {},
+      "Ve\u017ebajte iz Razli\u010ditih Uglova": {},
+      "Koristite Pomo\u0107ne Linije": {},
+      "Redovno Ve\u017ebanje": {},
+      "Analiza": {}
+    }
+  },
   "Animaciju": {},
   "Stop motion animaciju": {},
   "Prodaja lutaka": {},
   "Internet trgovina": {},
-  "Telo": {
-    "Calisthenic": {},
-    "Izdrzljivost": {},
-    "Istezanje": {}
+  "Telo": {},
+  "Hierarchy development": {
+    "Color Done": {},
+    "Arrow up": {}
+  },
+  "Python programiranje": {
+    "Biblioteke": {
+      "TensorFlow": {},
+      "PyTorch": {}
+    },
+    "Bibliotekeke": {
+      "": {}
+    }
   }
 }
