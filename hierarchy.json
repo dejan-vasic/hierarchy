@@ -40,7 +40,11 @@
   "Stop motion animaciju": {},
   "Prodaja lutaka": {},
   "Internet trgovina": {},
-  "Telo": {},
+  "Telo": {
+    "Calisthenic": {},
+    "Izdrzljivost": {},
+    "Istezanje": {}
+  },
   "Hierarchy development": {
     "Color Done": {},
     "Arrow up": {}
