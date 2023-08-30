@@ -1,0 +1,16 @@
+#hierarchy {
+    margin-left: 20px;
+}
+
+.level {
+    margin-left: 20px;
+    padding: 5px;
+    border: 1px solid #ddd;
+    cursor: pointer;
+}
+
+.children {
+    display: block;
+}
+
+/* Dodatni stilovi po potrebi */

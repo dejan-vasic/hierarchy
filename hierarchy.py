@@ -69,6 +69,9 @@ def main():
 
         if choice == '1':
             print_hierarchy(hierarchy)
+            completition_data = vs.generate_completion_data(hierarchy)
+            vs.draw_tree_hierarchy_with_completion(hierarchy, completition_data)
+            vs.visualize_hierarchy_with_completion(hierarchy)
         elif choice == '2':
             path = input("Enter the path to the new element (e.g., Programming/Python): ").split('/')
             add_element(hierarchy, path)
